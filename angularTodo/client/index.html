@@ -1,0 +1,15 @@
+<html ng-app="demo">
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="js/angular.min.js"></script>
+        <script src="app/app.js"></script>
+    </head>
+    <body ng-controller="demoCtrl">
+        <input type="text" ng-model="todo">
+        <button ng-click="addTodo()">{{(index==-1) ? "Add Todo" : "Update Todo"}}</button>
+        <ul>
+            <li ng-repeat="val in todos track by $index">{{val}} <span class="fa fa-trash-o" aria-hidden="true" ng-click="deleteTodo($index)"></span> <span class="fa fa-pencil-square-o" aria-hidden="true" ng-click="editTodo(val, $index)"></span></li>
+        </ul>
+    </body>
+</html>
